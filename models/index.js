@@ -1,6 +1,6 @@
 const dbConfig = require("../config/db");
 const Sequelize = require("sequelize");
-const sequlize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
   operatorAlias: false,
@@ -13,9 +13,9 @@ const sequlize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
 });
 const db = {};
 db.Sequelize = Sequelize;
-db.sequlize = sequlize;
+db.sequelize = sequelize;
 
 // define mode
-db.quizzes = require("./quiz")(sequlize, Sequelize);
-db.user = require("./user")(sequlize, Sequelize);
+db.quizzes = require("./quiz")(sequelize, Sequelize);
+db.user = require("./user")(sequelize, Sequelize);
 module.exports = db;

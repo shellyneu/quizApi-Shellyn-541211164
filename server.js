@@ -12,7 +12,7 @@ app.use(express.json()); //fungsinya agar bisa baca inputan dri form || for pars
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 const db = require("./models");
-db.sequlize.sync();
+db.sequelize.sync();
 
 app.get("/", (req, res) => {
   res.send("Quiz Express JS API by Shellyn");

@@ -21,7 +21,9 @@ const signup = async (req, res) => {
 
 const signin = async (req, res) => {
   const table = await User.findOne({
-    username: req.body.username,
+    where: {
+      username: req.body.username,
+    },
   });
 
   if (!table) {
